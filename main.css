@@ -1,0 +1,105 @@
+html, body {
+	margin: 0; padding: 0;
+	
+	background-color: #009688;
+	font-family: 'Lato', sans-serif;
+	
+	height: 100vh;
+	width: 100vw;
+	box-sizing: border-box;
+}
+
+body {
+	overflow: auto;
+}
+
+h1 {
+	color: white;
+	text-shadow: 0 0 1px white;
+	text-align: center;
+	font-weight: 300;
+}
+
+.footer {
+	display: none;
+	box-sizing: border-box;
+	text-align: center;
+	margin: 0; padding: 8px;
+	color: white;
+	background-color: #055; /* mix(black, $bg-color, 0.33) */
+	box-shadow: 0 -2px 3px rgba(0,0,0,.12);
+	bottom: 0;
+}
+
+
+.article {
+	box-sizing: border-box;
+	border-radius: 4px;
+	background-color: white;
+	color: rgba(0,0,0,.87);
+	
+	margin: 16px 8px;
+	padding: 8px;
+	
+	-moz-user-select: none;
+	user-select: none;
+	
+	filter: saturate(0);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@media screen and (min-width: 860px) {
+	.article {
+		max-width: 700px;
+		margin: 32px auto;
+		padding: 16px;
+	}
+}
+
+.article:not(:hover) a {
+	color: black;
+}
+.article:hover {
+	filter: saturate(1);
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+.article a {
+	color: #66e;
+}
+.article a:visited {
+	color: #35d;
+}
+
+.article p {
+	margin: 0; padding: 0;
+	margin-bottom: 8px;
+}
+.article p:last-child {
+	margin-bottom: 0;
+}
+.article h2 {
+	margin: 0; padding: 0;
+	margin-bottom: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body.view-one h1, body.view-one .footer, body.view-one #articles .article {
+	opacity: 0;
+}
+body.view-one #articles .article.selected {
+	position: absolute;
+	opacity: 1 !important;
+	max-width: unset;
+	width: auto; height: auto;
+	top: 16px; bottom: 16px;
+	left: 16px; right: 16px;
+	
+	-moz-user-select: auto;
+	user-select: auto;
+}

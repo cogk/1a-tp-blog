@@ -105,6 +105,7 @@ articles.forEach(article =>
 	article.addEventListener("dblclick", e => {
 		document.body.classList.add("view-one")
 		article.classList.add("selected")
+		history.pushState({articleId: article.id}, "page "+article.id, ""+article.id)
 	})
 )
 </script>
